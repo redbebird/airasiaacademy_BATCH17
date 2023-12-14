@@ -24,7 +24,7 @@ data = user_input_features()
 
 st.subheader('User Input parameters')
 #st.write(data)
-st.write("TV",data.TV)
+st.write("TV",data.loc[0].TV)
 loaded_model = pickle.load(open("Advertising_SVR.h5", "rb"))
 
 prediction = loaded_model.predict(data)
