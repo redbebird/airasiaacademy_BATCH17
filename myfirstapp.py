@@ -37,7 +37,7 @@ elif option=='Long Process':
 
     for i in range(1000):
         latest_iteration.text(f'Iteration {i+5}')
-        bar.progress(i + 5)
+        bar.progress(i + 1)
         time.sleep(0.5)
 
-    '...and now we\'re done!'
+    '...and now we're done!'
