@@ -1,17 +1,18 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import time
 
 st.header("My very first lovely Streamlit App")
 
 option = st.sidebar.selectbox(
     'Select a mini project',
-     ['Line Chart','Map','T&Cs'])
+     ['Line Chart','Map','T&Cs','Long Process'])
 
 if option=='Line Chart':
     chart_data = pd.DataFrame(
-      np.random.randn(20, 3),
-      columns=['a', 'b', 'c'])
+      np.random.randn(20, 5),
+      columns=['a', 'b', 'c','d','e'])
     st.line_chart(chart_data)
 
 elif option=='Map':
@@ -28,3 +29,15 @@ elif option=='T&Cs':
           'Students': ['John', 'Lofa', 'Siti', 'Amy'],
           'Attendance Status': ['yes', 'yes', 'yes', 'no']
         }))
+elif option=='Long Process':
+    'Starting a long computation...'
+
+    latest_iteration = st.empty()
+    bar = st.progress(0)
+
+    for i in range(100):
+        latest_iteration.text(f'Iteration {i+1}')
+        bar.progress(i + 1)
+        time.sleep(0.1)
+
+    '...and now we\'re done!'
