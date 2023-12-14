@@ -40,4 +40,4 @@ elif option=='Long Process':
         bar.progress(i + 1)
         time.sleep(0.5)
 
-    '...and now we're done!'
+    '...and now we\'re done!'
