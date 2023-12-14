@@ -11,12 +11,12 @@ option = st.sidebar.selectbox(
 if option=='Line Chart':
     chart_data = pd.DataFrame(
       np.random.randn(20, 3),
-      columns=['a', 'b', 'c','d','e','f','g'])
+      columns=['a', 'b', 'c'])
     st.line_chart(chart_data)
 
 elif option=='Map':
     map_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [5.4204, 116.7968],
+    np.random.randn(1000, 2) / [50, 50] + [5.9804, 116.0735],
     columns=['lat', 'lon'])
     st.map(map_data)
 
